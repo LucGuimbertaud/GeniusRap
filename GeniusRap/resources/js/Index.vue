@@ -1,11 +1,22 @@
 <template>
     <div>
-        <div class="navbar navbar-expand-sm navbar-light" style="background-color: #ffff64">
+        <div
+            class="navbar navbar-expand-sm navbar-light"
+            style="background-color: #ffff64"
+        >
             <router-link to="/">
                 <a class="navbar-brand font-weight-bolder">Génius Rap</a>
             </router-link>
 
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
                 <span class=" navbar-toggler-icon"></span>
             </button>
             <div class=" collapse navbar-collapse" id="navbarNavAltMarkup">
@@ -15,7 +26,6 @@
                     </router-link>
                     <a class="nav-link">Artistes</a>
                     <a class="nav-link">Album</a>
-
                 </div>
             </div>
             <form class="form-inline">

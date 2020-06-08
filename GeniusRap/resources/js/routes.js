@@ -1,18 +1,18 @@
 import VueRouter from "vue-router";
-import Test1 from "./components/Test1";
+import Test from "./test/Test";
 
 
 const routes = [
     {
         path: "/",
-        component: Test1,
-        name: "home",
+        component: Test,
+        name: "test",
     },
 ];
 
 const router = new VueRouter({
     mode: 'history',
-    routes
+    routes,
 });
 
 export default router;

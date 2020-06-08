@@ -6,7 +6,7 @@ import Index from "./Index";
 window.Vue = require("vue");
 Vue.use(VueRouter);
 
-new Vue({
+const app = new Vue({
     el: "#app",
     router,
     components: {

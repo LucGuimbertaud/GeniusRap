@@ -1,13 +1,19 @@
 import VueRouter from "vue-router";
-import Test from "./test/Test";
+import TracksPreview from "./Tracks/TracksPreview";
+import Tracks from "./Tracks/Tracks";
 
 
 const routes = [
     {
         path: "/",
-        component: Test,
-        name: "test",
+        component: TracksPreview,
+        name: "tracksPreview",
     },
+    {
+        path: "/tracks",
+        component: Tracks,
+        name: "tracks",
+    }
 ];
 
 const router = new VueRouter({

@@ -11,7 +11,7 @@
 
         <!-- Scrips -->
         <script src="{{ 'js/app.js' }}" defer></script>
-
+        <link rel="stylesheet" href="{{ asset("css/app.css") }}">
 
     </head>
     <body>

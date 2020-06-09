@@ -1,5 +1,5 @@
 <?php
-
+use App\Track;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::get('tracks', function (Request $request) {
+    return Track::all();
 });

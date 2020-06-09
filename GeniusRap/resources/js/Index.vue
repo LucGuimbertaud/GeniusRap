@@ -4,7 +4,7 @@
             class="navbar navbar-expand-sm navbar-light"
             style="background-color: #ffff64"
         >
-            <router-link to="/">
+            <router-link v-bind:to="{name : 'home'}">
                 <a class="navbar-brand font-weight-bolder">Génius Rap</a>
             </router-link>
 
@@ -21,7 +21,7 @@
             </button>
             <div class=" collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <router-link to="/tracks">
+                    <router-link v-bind:to="{name: 'tracks'}">
                         <a class="nav-link">Musiques</a>
                     </router-link>
                     <a class="nav-link">Artistes</a>

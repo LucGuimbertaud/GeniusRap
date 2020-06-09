@@ -7,7 +7,7 @@ const routes = [
     {
         path: "/",
         component: TracksPreview,
-        name: "tracksPreview",
+        name: "home",
     },
     {
         path: "/tracks",

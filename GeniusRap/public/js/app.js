@@ -37450,7 +37450,7 @@ var render = function() {
         staticStyle: { "background-color": "#ffff64" }
       },
       [
-        _c("router-link", { attrs: { to: "/" } }, [
+        _c("router-link", { attrs: { to: { name: "home" } } }, [
           _c("a", { staticClass: "navbar-brand font-weight-bolder" }, [
             _vm._v("Génius Rap")
           ])
@@ -37469,7 +37469,7 @@ var render = function() {
               "div",
               { staticClass: "navbar-nav" },
               [
-                _c("router-link", { attrs: { to: "/tracks" } }, [
+                _c("router-link", { attrs: { to: { name: "tracks" } } }, [
                   _c("a", { staticClass: "nav-link" }, [_vm._v("Musiques")])
                 ]),
                 _vm._v(" "),
@@ -53157,7 +53157,7 @@ __webpack_require__.r(__webpack_exports__);
 var routes = [{
   path: "/",
   component: _Tracks_TracksPreview__WEBPACK_IMPORTED_MODULE_1__["default"],
-  name: "tracksPreview"
+  name: "home"
 }, {
   path: "/tracks",
   component: _Tracks_Tracks__WEBPACK_IMPORTED_MODULE_2__["default"],

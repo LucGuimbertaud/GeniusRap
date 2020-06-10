@@ -1899,6 +1899,48 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Tracks/Tracks.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/Tracks/Tracks.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      tracks: null
+    };
+  },
+  created: function created() {
+    var _this = this;
+
+    var request = axios.get("api/tracks").then(function (response) {
+      _this.tracks = response.data;
+    });
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -37557,78 +37599,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("ul", { staticClass: "list-group list-group-flush w-75 m-auto" }, [
+  return _c("div", [
+    _c(
+      "ul",
+      { staticClass: "list-group list-group-flush w-75 m-auto" },
+      [
         _c("h3", { staticClass: "mt-5" }, [_vm._v("Top Musiques COMPLETE")]),
         _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-          },
-          [_vm._v("Lorem")]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "list-group-item list-group-item-action justify-content-between align-items-center"
-          },
-          [
-            _c("span", [_vm._v("Lorem")]),
-            _vm._v(" "),
-            _c("span", [_vm._v("ipsum")])
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-          },
-          [_vm._v("Lorem")]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-          },
-          [_vm._v("Lorem")]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-          },
-          [_vm._v("Lorem")]
-        ),
-        _vm._v(" "),
-        _c(
-          "li",
-          {
-            staticClass:
-              "list-group-item list-group-item-action d-flex justify-content-between align-items-center"
-          },
-          [_vm._v("Lorem")]
-        )
-      ])
-    ])
-  }
-]
+        _vm._l(_vm.tracks, function(track) {
+          return _c(
+            "li",
+            {
+              key: track.id,
+              staticClass:
+                "list-group-item list-group-item-action justify-content-between align-items-center"
+            },
+            [_vm._v("\n            " + _vm._s(track["title"]) + "\n        ")]
+          )
+        })
+      ],
+      2
+    )
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -52969,15 +52963,17 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Tracks_vue_vue_type_template_id_e6c6223e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tracks.vue?vue&type=template&id=e6c6223e& */ "./resources/js/Tracks/Tracks.vue?vue&type=template&id=e6c6223e&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Tracks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tracks.vue?vue&type=script&lang=js& */ "./resources/js/Tracks/Tracks.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-var script = {}
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _Tracks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
   _Tracks_vue_vue_type_template_id_e6c6223e___WEBPACK_IMPORTED_MODULE_0__["render"],
   _Tracks_vue_vue_type_template_id_e6c6223e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
@@ -52991,6 +52987,20 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 if (false) { var api; }
 component.options.__file = "resources/js/Tracks/Tracks.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/Tracks/Tracks.vue?vue&type=script&lang=js&":
+/*!*****************************************************************!*\
+  !*** ./resources/js/Tracks/Tracks.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tracks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./Tracks.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/Tracks/Tracks.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tracks_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 

@@ -21,3 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('tracks', function (Request $request) {
     return Track::all();
 });
+
+
+Route::get('tracks/{id}', function (Request $request, $id) {
+    return Track::findOrFail($id);
+});

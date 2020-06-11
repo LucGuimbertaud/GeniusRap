@@ -34,6 +34,6 @@ export default {
             this.tracks = response.data;
             this.loading = false;
         });
-    },
+    }
 };
 </script>

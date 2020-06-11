@@ -30,7 +30,7 @@ export default {
     data() {
         return {
             tracks: null,
-            loading: false,
+            loading: false
         };
     },
 

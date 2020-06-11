@@ -4,12 +4,11 @@
     </div>
 </template>
 
-
 <script>
 export default {
     props: {
         title: String,
-        id: Number,
+        id: Number
     }
-}
+};
 </script>

@@ -1,30 +1,44 @@
 <template>
     <div>
-        <ul class="list-group list-group-flush w-75 m-auto">
-            <h3 class="mt-5">Top Musiques COMPLETE</h3>
+        <div v-if="loading">
+            <p class=" text-center mt-5">Loading..</p>
+        </div>
+        <div v-else>
+            <ul class="list-group list-group-flush w-75 m-auto">
+                <h3 class="mt-5">Top Musiques COMPLETE</h3>
 
-            <li
-                v-for="track in tracks"
-                :key="track.id"
-                class="list-group-item list-group-item-action justify-content-between align-items-center"
-            >
-                {{ track["title"] }}
-            </li>
-        </ul>
+                <li
+                    v-for="track in tracks"
+                    :key="track.id"
+                    class="list-group-item list-group-item-action justify-content-between align-items-center"
+                >
+                    <track-item v-bind="track"></track-item>
+                </li>
+            </ul>
+        </div>
     </div>
 </template>
 
 <script>
+import TrackItem from "./TrackItem";
+
 export default {
+    components: {
+        TrackItem
+    },
+
     data() {
         return {
-            tracks: null
+            tracks: null,
+            loading: false,
         };
     },
 
     created() {
+        this.loading = true;
         const request = axios.get("api/tracks").then(response => {
             this.tracks = response.data;
+            this.loading = false;
         });
     }
 };

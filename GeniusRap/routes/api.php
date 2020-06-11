@@ -26,3 +26,10 @@ Route::get('tracks', function (Request $request) {
 Route::get('tracks/{id}', function (Request $request, $id) {
     return Track::findOrFail($id);
 });
+
+Route::get('top-tracks', function (Request $request) {
+    return DB::table('tracks')
+        ->select('title', 'id')
+        ->take(5)
+        ->get();
+});

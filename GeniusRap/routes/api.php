@@ -23,7 +23,7 @@ Route::get('tracks', function (Request $request) {
 });
 
 
-Route::get('tracks/{id}', function (Request $request, $id) {
+Route::get('track/{id}', function (Request $request, $id) {
     return Track::findOrFail($id);
 });
 

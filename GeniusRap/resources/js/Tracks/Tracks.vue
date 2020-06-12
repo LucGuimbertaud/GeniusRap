@@ -34,6 +34,8 @@ export default {
         };
     },
 
+
+
     created() {
         this.loading = true;
         const request = axios.get("api/tracks").then(response => {

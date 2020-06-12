@@ -1,6 +1,8 @@
 <template>
     <div>
-        {{ title }}
+        <router-link :to="{name: 'track', params : {id}}">
+            {{ title }}
+        </router-link>
     </div>
 </template>
 

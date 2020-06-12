@@ -12,7 +12,7 @@
                     :key="track.id"
                     class="list-group-item list-group-item-action justify-content-between align-items-center"
                 >
-                    <track-item v-bind="track"></track-item>
+                        <track-item v-bind="track"></track-item>
                 </li>
             </ul>
         </div>
@@ -33,8 +33,6 @@ export default {
             loading: false
         };
     },
-
-
 
     created() {
         this.loading = true;

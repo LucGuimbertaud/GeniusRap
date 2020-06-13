@@ -1,9 +1,12 @@
 <template>
-    <div>
-        <router-link :to="{name: 'track', params : {id}}">
-            {{ title }}
-        </router-link>
-    </div>
+    <router-link
+        :to="{ name: 'track', params: { id } }"
+        tag="li"
+        class="list-group-item list-group-item-action justify-content-between align-items-center"
+        style="cursor: pointer"
+    >
+        {{ title }}
+    </router-link>
 </template>
 
 <script>

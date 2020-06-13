@@ -1956,6 +1956,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     title: String,
@@ -1975,9 +1978,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TrackItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrackItem */ "./resources/js/Tracks/TrackItem.vue");
-//
-//
-//
 //
 //
 //
@@ -2030,8 +2030,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TrackItem__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TrackItem */ "./resources/js/Tracks/TrackItem.vue");
-//
-//
 //
 //
 //
@@ -37761,15 +37759,14 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    [
-      _c(
-        "router-link",
-        { attrs: { to: { name: "track", params: { id: _vm.id } } } },
-        [_vm._v("\n        " + _vm._s(_vm.title) + "\n    ")]
-      )
-    ],
-    1
+    "router-link",
+    {
+      staticClass:
+        "list-group-item list-group-item-action justify-content-between align-items-center",
+      staticStyle: { cursor: "pointer" },
+      attrs: { to: { name: "track", params: { id: _vm.id } }, tag: "li" }
+    },
+    [_vm._v("\n    " + _vm._s(_vm.title) + "\n")]
   )
 }
 var staticRenderFns = []
@@ -37810,14 +37807,8 @@ var render = function() {
               _vm._v(" "),
               _vm._l(_vm.tracks, function(track) {
                 return _c(
-                  "li",
-                  {
-                    key: track.id,
-                    staticClass:
-                      "list-group-item list-group-item-action justify-content-between align-items-center"
-                  },
-                  [_c("track-item", _vm._b({}, "track-item", track, false))],
-                  1
+                  "track-item",
+                  _vm._b({ key: track.id }, "track-item", track, false)
                 )
               })
             ],
@@ -37862,14 +37853,8 @@ var render = function() {
               _vm._v(" "),
               _vm._l(_vm.tracks, function(track) {
                 return _c(
-                  "li",
-                  {
-                    key: track.id,
-                    staticClass:
-                      "list-group-item list-group-item-action justify-content-between align-items-center"
-                  },
-                  [_c("track-item", _vm._b({}, "track-item", track, false))],
-                  1
+                  "track-item",
+                  _vm._b({ key: track.id }, "track-item", track, false)
                 )
               })
             ],

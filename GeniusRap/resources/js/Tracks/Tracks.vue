@@ -6,14 +6,11 @@
         <div v-else>
             <ul class="list-group list-group-flush w-75 m-auto">
                 <h3 class="mt-5">Top Musiques COMPLETE</h3>
-
-                <li
-                    v-for="track in tracks"
-                    :key="track.id"
-                    class="list-group-item list-group-item-action justify-content-between align-items-center"
-                >
-                        <track-item v-bind="track"></track-item>
-                </li>
+                    <track-item
+                        v-for="track in tracks"
+                        :key="track.id"
+                        v-bind="track"
+                    ></track-item>
             </ul>
         </div>
     </div>

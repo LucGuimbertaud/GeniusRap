@@ -5,10 +5,10 @@
 use App\Artist;
 use Faker\Generator as Faker;
 
-$factory->define(Artist::class, function (Faker $faker) {
+$factory->define(Artist::class, function (Faker $faker){
     return [
-        'name' => $faker->firstName($gender = null|'male'|'female'),
+        'name' => $faker->firstNameMale,
         'surname' => $faker->lastName,
-        'artist_name' => $faker->firstName($gender = null|'male'|'female'),
+        'artist_name' => $faker->firstNameMale,
     ];
 });

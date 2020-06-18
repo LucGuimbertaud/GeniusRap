@@ -8,7 +8,7 @@ use Faker\Generator as Faker;
 $factory->define(Track::class, function (Faker $faker) {
     return [
         'title' => $faker->sentence($nbWords = 3, $variableNbWords = true),
-        'artiste_id' => random_int(0, 50),
+        'artist_id' => random_int(0, 50),
         'album_id' => 0,
         'release_date' => $faker->dateTimeThisYear($max = 'now', $timezone = null),
     ];

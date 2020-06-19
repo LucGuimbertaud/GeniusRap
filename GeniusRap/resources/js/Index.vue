@@ -24,8 +24,6 @@
                     <router-link v-bind:to="{name: 'tracks'}">
                         <a class="nav-link">Musiques</a>
                     </router-link>
-                    <a class="nav-link">Artistes</a>
-                    <a class="nav-link">Album</a>
                 </div>
             </div>
             <form class="form-inline">

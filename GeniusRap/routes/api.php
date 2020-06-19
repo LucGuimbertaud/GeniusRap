@@ -1,5 +1,6 @@
 <?php
 use App\Track;
+use App\Artist;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -28,8 +29,13 @@ Route::get('track/{id}', function (Request $request, $id) {
 });
 
 Route::get('top-tracks', function (Request $request) {
-    return DB::table('tracks')
-        ->select('title', 'id')
-        ->take(5)
+    return DB::table('tracks');
+
+});
+
+Route::get('artist/{id}', function(Request $request, $id) {
+    return DB::table('artists')
+        ->where('id', '=', $id)
+        ->select('name', 'surname', 'artist_name')
         ->get();
 });

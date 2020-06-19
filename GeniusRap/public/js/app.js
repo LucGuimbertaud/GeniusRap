@@ -1923,15 +1923,19 @@ __webpack_require__.r(__webpack_exports__);
   data: function data() {
     return {
       loading: false,
-      track: null
+      track: null,
+      artist: null
     };
   },
   created: function created() {
     var _this = this;
 
     this.loading = true;
-    var request = axios.get("/api/track/".concat(this.$route.params.id)).then(function (response) {
+    var request_track = axios.get("/api/track/".concat(this.$route.params.id)).then(function (response) {
       _this.track = response.data;
+    });
+    var request_artist = axios.get("/api/artist/".concat($track.artist_id)).then(function (response) {
+      _this.artist = response.data;
       _this.loading = false;
     });
   }
@@ -37644,11 +37648,7 @@ var render = function() {
               [
                 _c("router-link", { attrs: { to: { name: "tracks" } } }, [
                   _c("a", { staticClass: "nav-link" }, [_vm._v("Musiques")])
-                ]),
-                _vm._v(" "),
-                _c("a", { staticClass: "nav-link" }, [_vm._v("Artistes")]),
-                _vm._v(" "),
-                _c("a", { staticClass: "nav-link" }, [_vm._v("Album")])
+                ])
               ],
               1
             )

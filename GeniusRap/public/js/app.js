@@ -1930,13 +1930,28 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.loading = true;
+    this.loading = true; // const request_track = axios.get(`/api/track/${this.$route.params.id}`);
+    // const request_artist = axios.get(`/api/artist/${this.track.artist_id}`);
+    // axios
+    //     .all([request_track, request_artist])
+    //     .then(
+    //         axios.spread((...responses) => {
+    //             this.track = responses[0].data;
+    //             this.artist = responses[1].data;
+    //             this.loading = false;
+    //         })
+    //     )
+
     var request_track = axios.get("/api/track/".concat(this.$route.params.id)).then(function (response) {
       _this.track = response.data;
-    });
-    var request_artist = axios.get("/api/artist/".concat($track.artist_id)).then(function (response) {
-      _this.artist = response.data;
       _this.loading = false;
+    });
+  },
+  mounted: function mounted() {
+    var _this2 = this;
+
+    var request_artist = axios.get("/api/artist/".concat(this.track.artist_id)).then(function (response) {
+      _this2.artist = response.data;
     });
   }
 });

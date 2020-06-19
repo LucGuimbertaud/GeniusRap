@@ -29,13 +29,16 @@ Route::get('track/{id}', function (Request $request, $id) {
 });
 
 Route::get('top-tracks', function (Request $request) {
-    return DB::table('tracks');
+    return DB::table('tracks')
+        ->select('title', 'id', 'artist_id', 'album_id', 'release_date')
+        ->take(5)
+        ->get();
 
 });
 
 Route::get('artist/{id}', function(Request $request, $id) {
     return DB::table('artists')
         ->where('id', '=', $id)
-        ->select('name', 'surname', 'artist_name')
+        ->select('name')
         ->get();
 });

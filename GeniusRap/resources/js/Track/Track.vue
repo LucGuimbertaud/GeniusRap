@@ -22,17 +22,33 @@ export default {
     created() {
         this.loading = true;
 
+        // const request_track = axios.get(`/api/track/${this.$route.params.id}`);
+        // const request_artist = axios.get(`/api/artist/${this.track.artist_id}`);
+
+        // axios
+        //     .all([request_track, request_artist])
+        //     .then(
+        //         axios.spread((...responses) => {
+        //             this.track = responses[0].data;
+        //             this.artist = responses[1].data;
+        //             this.loading = false;
+        //         })
+        //     )
         const request_track = axios
             .get(`/api/track/${this.$route.params.id}`)
             .then(response => {
                 this.track = response.data;
+                this.loading = false;
             });
 
+
+    },
+
+    mounted() {
         const request_artist = axios
-            .get(`/api/artist/${$track.artist_id}`)
+            .get(`/api/artist/${this.track.artist_id}`)
             .then(response => {
                 this.artist = response.data;
-                this.loading = false;
             });
     }
 };

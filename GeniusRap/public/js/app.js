@@ -1930,28 +1930,10 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    this.loading = true; // const request_track = axios.get(`/api/track/${this.$route.params.id}`);
-    // const request_artist = axios.get(`/api/artist/${this.track.artist_id}`);
-    // axios
-    //     .all([request_track, request_artist])
-    //     .then(
-    //         axios.spread((...responses) => {
-    //             this.track = responses[0].data;
-    //             this.artist = responses[1].data;
-    //             this.loading = false;
-    //         })
-    //     )
-
+    this.loading = true;
     var request_track = axios.get("/api/track/".concat(this.$route.params.id)).then(function (response) {
       _this.track = response.data;
       _this.loading = false;
-    });
-  },
-  mounted: function mounted() {
-    var _this2 = this;
-
-    var request_artist = axios.get("/api/artist/".concat(this.track.artist_id)).then(function (response) {
-      _this2.artist = response.data;
     });
   }
 });
@@ -1978,10 +1960,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      loading: false,
+      artist: null
+    };
+  },
   props: {
     title: String,
+    artist_id: Number,
+    release_date: String,
     id: Number
+  },
+  created: function created() {
+    var _this = this;
+
+    this.loading = true;
+    var request_artist = axios.get("/api/artist/".concat(this.artist_id)).then(function (response) {
+      _this.artist = response.data;
+      _this.loading = false;
+    });
   }
 });
 
@@ -37748,7 +37750,7 @@ var render = function() {
   return _c("div", [
     _vm.loading
       ? _c("div", [_vm._v("\n        Loading..\n    ")])
-      : _c("div", [_c("h1", [_vm._v(" " + _vm._s(_vm.track.title) + " ")])])
+      : _c("div", [_c("h1", [_vm._v(_vm._s(_vm.track.title))])])
   ])
 }
 var staticRenderFns = []
@@ -37773,16 +37775,26 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "router-link",
-    {
-      staticClass:
-        "list-group-item list-group-item-action justify-content-between align-items-center",
-      staticStyle: { cursor: "pointer" },
-      attrs: { to: { name: "track", params: { id: _vm.id } }, tag: "li" }
-    },
-    [_vm._v("\n    " + _vm._s(_vm.title) + "\n")]
-  )
+  return _vm.loading
+    ? _c("span")
+    : _c(
+        "router-link",
+        {
+          staticClass:
+            "list-group-item list-group-item-action justify-content-between align-items-center",
+          staticStyle: { cursor: "pointer" },
+          attrs: { to: { name: "track", params: { id: _vm.id } }, tag: "li" }
+        },
+        [
+          _vm._v(
+            "\n    " +
+              _vm._s(_vm.title) +
+              "\n    " +
+              _vm._s(_vm.artist.name) +
+              "\n"
+          )
+        ]
+      )
 }
 var staticRenderFns = []
 render._withStripped = true

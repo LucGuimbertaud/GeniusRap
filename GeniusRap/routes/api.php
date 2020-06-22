@@ -30,7 +30,8 @@ Route::get('track/{id}', function (Request $request, $id) {
 
 Route::get('top-tracks', function (Request $request) {
     return DB::table('tracks')
-        ->select('title', 'id', 'artist_id', 'album_id', 'release_date')
+        ->select('title', 'id', 'artist_id', 'album_id', 'release_date', 'a.name')
+        ->join('artists as a', 'a.name', '=', 'tracks.artist_id')
         ->take(5)
         ->get();
 

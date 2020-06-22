@@ -20,7 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('tracks', function (Request $request) {
-    return Track::all();
+    return DB::table('tracks')
+        ->join('artists', 'tracks.artist_id', '=', 'artists.id')
+        ->select('tracks.title', 'tracks.id', 'tracks.artist_id', 'tracks.album_id', 'tracks.release_date', 'artists.name')
+        ->get();
 });
 
 
@@ -30,11 +33,10 @@ Route::get('track/{id}', function (Request $request, $id) {
 
 Route::get('top-tracks', function (Request $request) {
     return DB::table('tracks')
-        ->select('title', 'id', 'artist_id', 'album_id', 'release_date', 'a.name')
-        ->join('artists as a', 'a.name', '=', 'tracks.artist_id')
+        ->join('artists', 'tracks.artist_id', '=', 'artists.id')
+        ->select('tracks.title', 'tracks.id', 'tracks.artist_id', 'tracks.album_id', 'tracks.release_date', 'artists.name')
         ->take(5)
         ->get();
-
 });
 
 Route::get('artist/{id}', function(Request $request, $id) {

@@ -1961,29 +1961,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      loading: false,
-      artist: null
-    };
-  },
   props: {
     title: String,
     artist_id: Number,
     release_date: String,
-    id: Number
-  },
-  created: function created() {
-    var _this = this;
-
-    this.loading = true;
-    var request_artist = axios.get("/api/artist/".concat(this.artist_id)).then(function (response) {
-      _this.artist = response.data;
-      _this.loading = false;
-    });
+    id: Number,
+    name: String
   }
 });
 
@@ -37775,26 +37759,20 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.loading
-    ? _c("span")
-    : _c(
-        "router-link",
-        {
-          staticClass:
-            "list-group-item list-group-item-action justify-content-between align-items-center",
-          staticStyle: { cursor: "pointer" },
-          attrs: { to: { name: "track", params: { id: _vm.id } }, tag: "li" }
-        },
-        [
-          _vm._v(
-            "\n    " +
-              _vm._s(_vm.title) +
-              "\n    " +
-              _vm._s(_vm.artist.name) +
-              "\n"
-          )
-        ]
-      )
+  return _c(
+    "router-link",
+    {
+      staticClass:
+        "list-group-item list-group-item-action d-flex justify-content-between align-items-center",
+      staticStyle: { cursor: "pointer" },
+      attrs: { to: { name: "track", params: { id: _vm.id } }, tag: "li" }
+    },
+    [
+      _c("p", [_vm._v(_vm._s(_vm.title))]),
+      _vm._v(" "),
+      _c("p", [_vm._v(_vm._s(_vm.name))])
+    ]
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

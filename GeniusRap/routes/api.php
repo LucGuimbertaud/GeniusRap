@@ -28,7 +28,12 @@ Route::get('tracks', function (Request $request) {
 
 
 Route::get('track/{id}', function (Request $request, $id) {
-    return Track::findOrFail($id);
+    return DB::table('tracks')
+        ->join('artists', 'tracks.artist_id', '=', 'artists.id')
+        ->select('tracks.title', 'tracks.id', 'tracks.artist_id', 'tracks.album_id', 'tracks.release_date', 'artists.name')
+        ->where('tracks.id', '=', $id)
+        ->get();
+
 });
 
 Route::get('top-tracks', function (Request $request) {

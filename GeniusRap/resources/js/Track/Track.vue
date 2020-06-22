@@ -4,7 +4,8 @@
             Loading..
         </div>
         <div v-else>
-            <h1>{{ track.title }}</h1>
+            <h1>{{ track[0].title }}</h1>
+            <h3>{{ track[0].name }}</h3>
         </div>
     </div>
 </template>

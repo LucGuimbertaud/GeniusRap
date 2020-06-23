@@ -11,5 +11,6 @@ $factory->define(Track::class, function (Faker $faker) {
         'artist_id' => random_int(0, 50),
         'album_id' => 0,
         'release_date' => $faker->dateTimeThisYear($max = 'now', $timezone = null),
+        'lyrics' => $faker->paragraph($nbSentences = 6, $variableNbSentences = true),
     ];
 });

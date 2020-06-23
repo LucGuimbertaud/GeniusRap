@@ -22,6 +22,12 @@
                 <div class="col-4">
                     <h3>{{ track[0].name }}</h3>
                 </div>
+                <div class="col-6">
+                    <h3>Paroles</h3>
+                    <p>
+                        {{ track[0].lyrics }}
+                    </p>
+                </div>
             </div>
         </div>
     </div>

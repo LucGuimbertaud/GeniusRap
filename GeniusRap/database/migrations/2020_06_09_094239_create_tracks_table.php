@@ -21,6 +21,7 @@ class CreateTracksTable extends Migration
             $table->bigInteger('artist_id');
             $table->bigInteger('album_id');
             $table->date('release_date');
+            $table->longText('lyrics');
         });
     }
 

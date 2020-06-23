@@ -1,11 +1,28 @@
 <template>
-    <div>
+    <div class=" container w-90 mt-5">
         <div v-if="loading">
             Loading..
         </div>
         <div v-else>
-            <h1>{{ track[0].title }}</h1>
-            <h3>{{ track[0].name }}</h3>
+            <div class="row mb-4">
+                <div class=" col-4">
+                    <img
+                        src="../../../storage/app/img/unknown.png"
+                        class=" img-thumbnail img-fluid"
+                        width="160px"
+                        height="160px"
+                    />
+                </div>
+                <div class=" col-6">
+                    <h1>{{ track[0].title }}</h1>
+                    <p>Date de sortie: {{ track[0].release_date }}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <h3>{{ track[0].name }}</h3>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -29,6 +46,6 @@ export default {
                 this.track = response.data;
                 this.loading = false;
             });
-    },
+    }
 };
 </script>

@@ -5,8 +5,8 @@
         class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
         style="cursor: pointer"
     >
-        <p>{{ title }}</p>
-        <p>{{ name }}</p>
+        <span>{{ title }}</span>
+        <span>{{ name }}</span>
     </router-link>
 </template>
 

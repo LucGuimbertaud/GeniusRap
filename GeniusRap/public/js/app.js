@@ -1920,6 +1920,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37732,17 +37749,47 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [
+  return _c("div", { staticClass: " container w-90 mt-5" }, [
     _vm.loading
       ? _c("div", [_vm._v("\n        Loading..\n    ")])
       : _c("div", [
-          _c("h1", [_vm._v(_vm._s(_vm.track[0].title))]),
+          _c("div", { staticClass: "row mb-4" }, [
+            _vm._m(0),
+            _vm._v(" "),
+            _c("div", { staticClass: " col-6" }, [
+              _c("h1", [_vm._v(_vm._s(_vm.track[0].title))]),
+              _vm._v(" "),
+              _c("p", [
+                _vm._v("Date de sortie: " + _vm._s(_vm.track[0].release_date))
+              ])
+            ])
+          ]),
           _vm._v(" "),
-          _c("h3", [_vm._v(_vm._s(_vm.track[0].name))])
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-4" }, [
+              _c("h3", [_vm._v(_vm._s(_vm.track[0].name))])
+            ])
+          ])
         ])
   ])
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: " col-4" }, [
+      _c("img", {
+        staticClass: " img-thumbnail img-fluid",
+        attrs: {
+          src: __webpack_require__(/*! ../../../storage/app/img/unknown.png */ "./storage/app/img/unknown.png"),
+          width: "160px",
+          height: "160px"
+        }
+      })
+    ])
+  }
+]
 render._withStripped = true
 
 
@@ -37773,9 +37820,9 @@ var render = function() {
       attrs: { to: { name: "track", params: { id: _vm.id } }, tag: "li" }
     },
     [
-      _c("p", [_vm._v(_vm._s(_vm.title))]),
+      _c("span", [_vm._v(_vm._s(_vm.title))]),
       _vm._v(" "),
-      _c("p", [_vm._v(_vm._s(_vm.name))])
+      _c("span", [_vm._v(_vm._s(_vm.name))])
     ]
   )
 }
@@ -53507,6 +53554,17 @@ var router = new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./storage/app/img/unknown.png":
+/*!*************************************!*\
+  !*** ./storage/app/img/unknown.png ***!
+  \*************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/unknown.png?6b6a739c9eb69f156540d7b5eaffe1b7";
 
 /***/ }),
 

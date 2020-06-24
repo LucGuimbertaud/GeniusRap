@@ -20,7 +20,13 @@
             </div>
             <div class="row">
                 <div class="col-4">
-                    <h3>{{ track[0].name }}</h3>
+                    <router-link
+                        :to="{name: 'artist', params: track[0].artist_id}"
+                        tag='h3'
+                        style="cursor: pointer"
+                    >
+                        {{ track[0].name }}
+                    </router-link>
                 </div>
                 <div class="col-6">
                     <h3>Paroles</h3>

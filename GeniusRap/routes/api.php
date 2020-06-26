@@ -47,7 +47,7 @@ Route::get('top-tracks', function (Request $request) {
 Route::get('artist/{id}', function(Request $request, $id) {
     return DB::table('artists')
         ->join('tracks', 'artists.id', '=', 'tracks.artist_id')
-        ->select('artists.id', 'artists.name', 'artists.surname', 'artists.artist_name', 'tracks.title')
+        ->select('artists.id', 'artists.name', 'artists.surname', 'artists.artist_name', 'tracks.title', 'tracks.id')
         ->where('artists.id', '=', $id)
         ->get();
 });

@@ -1915,6 +1915,20 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37686,7 +37700,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", [_vm._v("\n    artist\n")])
+  return _c("div", [
+    _vm.loading
+      ? _c("div", [_vm._v("\n        Loading...\n    ")])
+      : _c(
+          "div",
+          { staticClass: "container" },
+          [
+            _c("div", { staticClass: "row mt-4" }, [
+              _c("div", { staticClass: "col-4" }, [
+                _c("h3", [_vm._v(_vm._s(_vm.artist[0].artist_name))])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._l(_vm.artist, function(track) {
+              return _c("div", { key: track.title, staticClass: "row" }, [
+                _c("div", { staticClass: "col-6" }, [
+                  _c("p", [_vm._v(" " + _vm._s(track.title) + " ")])
+                ])
+              ])
+            })
+          ],
+          2
+        )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

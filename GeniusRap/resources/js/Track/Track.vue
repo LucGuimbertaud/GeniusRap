@@ -25,7 +25,7 @@
                         tag='h3'
                         style="cursor: pointer"
                     >
-                        {{ track[0].name }}
+                        {{ track[0].artist_name }}
                     </router-link>
                 </div>
                 <div class="col-6">

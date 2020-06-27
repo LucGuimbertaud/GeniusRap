@@ -1929,6 +1929,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37715,9 +37719,26 @@ var render = function() {
             _vm._v(" "),
             _vm._l(_vm.artist, function(track) {
               return _c("div", { key: track.title, staticClass: "row" }, [
-                _c("div", { staticClass: "col-6" }, [
-                  _c("p", [_vm._v(" " + _vm._s(track.title) + " ")])
-                ])
+                _c(
+                  "div",
+                  { staticClass: "col-6" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        attrs: { to: { name: "track", params: track.track_id } }
+                      },
+                      [
+                        _vm._v(
+                          "\n                    " +
+                            _vm._s(track.title) +
+                            "\n                "
+                        )
+                      ]
+                    )
+                  ],
+                  1
+                )
               ])
             })
           ],
@@ -37891,7 +37912,7 @@ var render = function() {
                   [
                     _vm._v(
                       "\n                    " +
-                        _vm._s(_vm.track[0].name) +
+                        _vm._s(_vm.track[0].artist_name) +
                         "\n                "
                     )
                   ]
@@ -53748,10 +53769,12 @@ var routes = [{
   name: "tracks"
 }, {
   path: "/track/:id",
+  props: true,
   component: _Track_Track__WEBPACK_IMPORTED_MODULE_3__["default"],
   name: "track"
 }, {
   path: "/artist/:id",
+  props: true,
   component: _Artist_Artist__WEBPACK_IMPORTED_MODULE_4__["default"],
   name: 'artist'
 }];

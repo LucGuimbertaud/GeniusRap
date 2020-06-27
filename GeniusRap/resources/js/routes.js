@@ -18,11 +18,13 @@ const routes = [
     },
     {
         path: "/track/:id",
+        props: true,
         component: Track,
         name: "track",
     },
     {
         path: "/artist/:id",
+        props: true,
         component: Artist,
         name: 'artist',
     }

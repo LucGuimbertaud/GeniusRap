@@ -14,24 +14,23 @@
                     />
                 </div>
                 <div class=" col-6">
-                    <h1>{{ track[0].title }}</h1>
-                    <p>Date de sortie: {{ track[0].release_date }}</p>
+                    <h1>{{ tracks[0].title }}</h1>
+                    <p>Date de sortie: {{ tracks[0].release_date }}</p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-4">
-                    <router-link
-                        :to="{name: 'artist', params: track[0].artist_id}"
-                        tag='h3'
-                        style="cursor: pointer"
+                    <ArtistRouter
+                        v-for="track in tracks"
+                        :key="track.id"
+                        v-bind="track"
                     >
-                        {{ track[0].artist_name }}
-                    </router-link>
+                    </ArtistRouter>
                 </div>
                 <div class="col-6">
                     <h3>Paroles</h3>
                     <p>
-                        {{ track[0].lyrics }}
+                        {{ tracks[0].lyrics }}
                     </p>
                 </div>
             </div>
@@ -40,11 +39,16 @@
 </template>
 
 <script>
+import ArtistRouter from "./Routers/ArtistRouter"
 export default {
+    components: {
+        ArtistRouter
+    },
+
     data() {
         return {
             loading: false,
-            track: null,
+            tracks: null,
             artist: null
         };
     },
@@ -55,7 +59,7 @@ export default {
         const request_track = axios
             .get(`/api/track/${this.$route.params.id}`)
             .then(response => {
-                this.track = response.data;
+                this.tracks = response.data;
                 this.loading = false;
             });
     }

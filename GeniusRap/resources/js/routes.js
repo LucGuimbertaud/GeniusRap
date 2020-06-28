@@ -23,6 +23,7 @@ const routes = [
     },
     {
         path: "/artist/:id",
+        props: true,
         component: Artist,
         name: 'artist',
     }

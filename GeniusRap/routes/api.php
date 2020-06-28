@@ -22,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('tracks', function (Request $request) {
     return DB::table('tracks')
         ->join('artists', 'tracks.artist_id', '=', 'artists.id')
-        ->select('tracks.title', 'tracks.id', 'tracks.artist_id', 'tracks.album_id', 'tracks.release_date', 'artists.name')
+        ->select('tracks.title', 'tracks.id', 'tracks.artist_id', 'tracks.album_id', 'tracks.release_date', 'artists.name', 'artists.artist_name')
         ->get();
 });
 

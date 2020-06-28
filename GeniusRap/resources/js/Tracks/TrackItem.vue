@@ -1,12 +1,12 @@
 <template>
     <router-link
-        :to="{ name: 'track', params: { id } }"
+        :to="{ name: 'track', params: { id: id } }"
         tag="li"
         class="list-group-item list-group-item-action d-flex justify-content-between align-items-center"
         style="cursor: pointer"
     >
         <span>{{ title }}</span>
-        <span>{{ name }}</span>
+        <span>{{ artist_name }}</span>
     </router-link>
 </template>
 
@@ -18,6 +18,7 @@ export default {
         release_date: String,
         id: Number,
         name: String,
+        artist_name: String,
     },
 };
 </script>

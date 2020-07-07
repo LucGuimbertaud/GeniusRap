@@ -1944,6 +1944,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37719,60 +37726,61 @@ var render = function() {
   return _c("div", [
     _vm.loading
       ? _c("div", [_vm._v("\n        Loading...\n    ")])
-      : _c(
-          "div",
-          { staticClass: "container" },
-          [
-            _c("div", { staticClass: "row mt-5" }, [
-              _c("div", { staticClass: "col-4" }, [
-                _c("h3", [_vm._v(_vm._s(_vm.artist[0].artist_name))])
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "col-3 d-flex justify-content-between" },
-                [
-                  _c("p", [_vm._v("Name: " + _vm._s(_vm.artist[0].name))]),
-                  _vm._v(" "),
-                  _c("p", [_vm._v("Surname: " + _vm._s(_vm.artist[0].surname))])
-                ]
-              )
+      : _c("div", { staticClass: "container" }, [
+          _c("div", { staticClass: "row mt-5" }, [
+            _c("div", { staticClass: "col-4" }, [
+              _c("h3", [_vm._v(_vm._s(_vm.artist[0].artist_name))])
             ]),
             _vm._v(" "),
+            _c("div", { staticClass: "col-3 d-flex justify-content-between" }, [
+              _c("p", [_vm._v(_vm._s(_vm.artist[0].name))]),
+              _vm._v(" "),
+              _c("p", [_vm._v(_vm._s(_vm.artist[0].surname))])
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row mt-4" }, [
             _vm._m(0),
             _vm._v(" "),
-            _vm._l(_vm.artist, function(track) {
-              return _c("div", { key: track.title, staticClass: "row" }, [
-                _c("div", { staticClass: "col-4" }),
+            _c(
+              "div",
+              { staticClass: "col-6" },
+              [
+                _c("h3", [_vm._v("Tracks")]),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "col-6" },
-                  [
-                    _c(
-                      "router-link",
-                      {
-                        attrs: {
-                          to: { name: "track", params: { id: track.track_id } },
-                          push: ""
-                        }
-                      },
-                      [
-                        _vm._v(
-                          "\n                    " +
-                            _vm._s(track.title) +
-                            "\n                "
-                        )
-                      ]
-                    )
-                  ],
-                  1
-                )
-              ])
-            })
-          ],
-          2
-        )
+                _vm._l(_vm.artist, function(track) {
+                  return _c(
+                    "div",
+                    { key: track.title },
+                    [
+                      _c(
+                        "router-link",
+                        {
+                          attrs: {
+                            to: {
+                              name: "track",
+                              params: { id: track.track_id }
+                            },
+                            push: ""
+                          }
+                        },
+                        [
+                          _vm._v(
+                            "\n                        " +
+                              _vm._s(track.title) +
+                              "\n                    "
+                          )
+                        ]
+                      )
+                    ],
+                    1
+                  )
+                })
+              ],
+              2
+            )
+          ])
+        ])
   ])
 }
 var staticRenderFns = [
@@ -37780,10 +37788,15 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt-4" }, [
-      _c("div", { staticClass: "col-4" }),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-6" }, [_c("h3", [_vm._v("Tracks")])])
+    return _c("div", { staticClass: "col-4" }, [
+      _c("img", {
+        staticClass: " img-thumbnail img-fluid",
+        attrs: {
+          src: __webpack_require__(/*! ../../../storage/app/img/unknown.png */ "./storage/app/img/unknown.png"),
+          width: "160px",
+          height: "160px"
+        }
+      })
     ])
   }
 ]

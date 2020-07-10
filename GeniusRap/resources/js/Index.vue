@@ -4,7 +4,7 @@
             class="navbar navbar-expand-sm navbar-light"
             style="background-color: #ffff64"
         >
-            <router-link v-bind:to="{name : 'home'}">
+            <router-link v-bind:to="{ name: 'home' }">
                 <a class="navbar-brand font-weight-bolder">Génius Rap</a>
             </router-link>
 
@@ -21,7 +21,7 @@
             </button>
             <div class=" collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <router-link v-bind:to="{name: 'tracks'}">
+                    <router-link v-bind:to="{ name: 'tracks' }">
                         <a class="nav-link">Musiques</a>
                     </router-link>
                 </div>
@@ -32,13 +32,15 @@
                     type="search"
                     placeholder="Rechercher"
                     aria-label="Search"
+                    v-model="query"
                 />
-                <button
-                    class="btn btn-outline-success my-2 my-sm-0"
-                    type="submit"
-                >
-                    Rechercher
-                </button>
+                <ul v-if="results.length > 0 && query">
+                    <li v-for="result in results.slice(0, 10)" :key="result.id">
+                        <a :href="result.url">
+                            <div v-text="result"></div>
+                        </a>
+                    </li>
+                </ul>
             </form>
         </div>
 
@@ -47,3 +49,27 @@
         </div>
     </div>
 </template>
+
+<script>
+export default {
+    data() {
+        return {
+            query: null,
+            results: []
+        };
+    },
+    watch: {
+        query(after, before) {
+            this.searchMembers();
+        }
+    },
+    methods: {
+        searchMembers() {
+            axios
+                .get("artists/search", { params: { query: this.query } })
+                .then(response => (this.results = response.data))
+                .catch(error => {});
+        }
+    }
+};
+</script>

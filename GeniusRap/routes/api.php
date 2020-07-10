@@ -51,3 +51,5 @@ Route::get('artist/{id}', function(Request $request, $id) {
         ->where('artists.id', '=', $id)
         ->get();
 });
+
+Route::get('artist/search', 'ArtistSearchController@index');

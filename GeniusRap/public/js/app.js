@@ -2048,7 +2048,7 @@ __webpack_require__.r(__webpack_exports__);
     searchMembers: function searchMembers() {
       var _this = this;
 
-      axios.get("artists/search", {
+      axios.get("api/artist/search", {
         params: {
           query: this.query
         }

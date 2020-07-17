@@ -53,4 +53,8 @@ Route::get('artist/{id}', function(Request $request, $id) {
         ->get();
 });
 
-Route::get('artist/search', 'ArtistSearchController@index');
+Route::get('artist/search/{name}', function(Request $request, $query) {
+    return DB::table('artists')
+        ->where('name', 'LIKE', '%'.$query.'%')
+        ->get();
+});

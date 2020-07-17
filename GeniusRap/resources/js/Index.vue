@@ -66,7 +66,7 @@ export default {
     methods: {
         searchMembers() {
             axios
-                .get("api/artist/search", { params: { query: this.query } })
+                .get(`api/artist/search/${this.query}`)
                 .then(response => (this.results = response.data))
                 .catch(error => {});
         }

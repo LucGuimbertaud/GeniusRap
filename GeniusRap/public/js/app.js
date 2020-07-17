@@ -2048,11 +2048,7 @@ __webpack_require__.r(__webpack_exports__);
     searchMembers: function searchMembers() {
       var _this = this;
 
-      axios.get("api/artist/search", {
-        params: {
-          query: this.query
-        }
-      }).then(function (response) {
+      axios.get("api/artist/search/".concat(this.query)).then(function (response) {
         return _this.results = response.data;
       })["catch"](function (error) {});
     }

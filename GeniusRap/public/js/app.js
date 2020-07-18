@@ -2032,6 +2032,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37944,45 +37946,54 @@ var render = function() {
         ),
         _vm._v(" "),
         _c("form", { staticClass: "form-inline" }, [
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.query,
-                expression: "query"
-              }
-            ],
-            staticClass: "form-control mr-md-2",
-            attrs: {
-              type: "search",
-              placeholder: "Rechercher",
-              "aria-label": "Search"
-            },
-            domProps: { value: _vm.query },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.query,
+                  expression: "query"
                 }
-                _vm.query = $event.target.value
+              ],
+              staticClass: "form-control mr-md-2",
+              attrs: {
+                type: "search",
+                placeholder: "Rechercher",
+                "aria-label": "Search"
+              },
+              domProps: { value: _vm.query },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.query = $event.target.value
+                }
               }
-            }
-          }),
-          _vm._v(" "),
-          _vm.results.length > 0 && _vm.query
-            ? _c(
-                "ul",
-                _vm._l(_vm.results.slice(0, 10), function(result) {
-                  return _c("li", { key: result.id }, [
-                    _c("a", { attrs: { href: result.url } }, [
-                      _c("div", { domProps: { textContent: _vm._s(result) } })
-                    ])
-                  ])
-                }),
-                0
-              )
-            : _vm._e()
+            }),
+            _vm._v(" "),
+            _vm.results.length > 0 && _vm.query
+              ? _c(
+                  "ul",
+                  { staticClass: " dropdown-menu" },
+                  _vm._l(_vm.results.slice(0, 10), function(result) {
+                    return _c(
+                      "li",
+                      { key: result.id, staticClass: " dropdown" },
+                      [
+                        _c("a", { attrs: { href: result.url } }, [
+                          _c("div", {
+                            domProps: { textContent: _vm._s(result.name) }
+                          })
+                        ])
+                      ]
+                    )
+                  }),
+                  0
+                )
+              : _vm._e()
+          ])
         ])
       ],
       1

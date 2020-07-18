@@ -27,6 +27,7 @@
                 </div>
             </div>
             <form class="form-inline">
+                <div>
                 <input
                     class="form-control mr-md-2"
                     type="search"
@@ -34,13 +35,14 @@
                     aria-label="Search"
                     v-model="query"
                 />
-                <ul v-if="results.length > 0 && query">
-                    <li v-for="result in results.slice(0, 10)" :key="result.id">
+                <ul v-if="results.length > 0 && query" class=" dropdown-menu">
+                    <li v-for="result in results.slice(0, 10)" :key="result.id" class=" dropdown">
                         <a :href="result.url">
-                            <div v-text="result"></div>
+                            <div v-text="result.name"></div>
                         </a>
                     </li>
                 </ul>
+                </div>
             </form>
         </div>
 

@@ -37976,19 +37976,17 @@ var render = function() {
             _vm.results.length > 0 && _vm.query
               ? _c(
                   "ul",
-                  { staticClass: " dropdown-menu" },
+                  { staticClass: " float-right" },
                   _vm._l(_vm.results.slice(0, 10), function(result) {
-                    return _c(
-                      "li",
-                      { key: result.id, staticClass: " dropdown" },
-                      [
-                        _c("a", { attrs: { href: result.url } }, [
-                          _c("div", {
-                            domProps: { textContent: _vm._s(result.name) }
-                          })
-                        ])
-                      ]
-                    )
+                    return _c("li", { key: result.id }, [
+                      _c("a", { attrs: { href: result.url } }, [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(result.name) +
+                            "\n                    "
+                        )
+                      ])
+                    ])
                   }),
                   0
                 )

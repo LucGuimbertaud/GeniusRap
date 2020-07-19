@@ -35,10 +35,10 @@
                     aria-label="Search"
                     v-model="query"
                 />
-                <ul v-if="results.length > 0 && query" class=" dropdown-menu">
-                    <li v-for="result in results.slice(0, 10)" :key="result.id" class=" dropdown">
+                <ul v-if="results.length > 0 && query" class=" float-right">
+                    <li v-for="result in results.slice(0, 10)" :key="result.id">
                         <a :href="result.url">
-                            <div v-text="result.name"></div>
+                            {{ result.name }}
                         </a>
                     </li>
                 </ul>

@@ -38,7 +38,7 @@
                 <ul v-if="results.length > 0 && query" class=" float-right">
                     <li v-for="result in results.slice(0, 10)" :key="result.id">
                         <a :href="result.url">
-                            {{ result.name }}
+                            {{result.name}}
                         </a>
                     </li>
                 </ul>

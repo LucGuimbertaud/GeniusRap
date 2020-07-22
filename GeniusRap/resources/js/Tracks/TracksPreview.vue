@@ -3,8 +3,8 @@
         <div v-if="loading">
             <p class=" text-center mt-5">Loading..</p>
         </div>
-        <div v-else>
-            <ul class="list-group list-group-flush w-75 m-auto">
+        <div v-else style="width: 65%" class=" m-auto">
+            <ul class="list-group list-group-flush m-auto">
                 <h3 class="mt-5">Top Musiques</h3>
                 <track-item
                     v-bind="track"

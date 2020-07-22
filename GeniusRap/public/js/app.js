@@ -2034,6 +2034,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -37976,17 +37981,25 @@ var render = function() {
             _vm.results.length > 0 && _vm.query
               ? _c(
                   "ul",
-                  { staticClass: " float-right" },
-                  _vm._l(_vm.results.slice(0, 10), function(result) {
-                    return _c("li", { key: result.id }, [
-                      _c("a", { attrs: { href: result.url } }, [
-                        _vm._v(
-                          "\n                        " +
-                            _vm._s(result.name) +
-                            "\n                    "
-                        )
-                      ])
-                    ])
+                  { staticClass: " position-absolute card p-0 ml-5" },
+                  _vm._l(_vm.results.slice(0, 5), function(result) {
+                    return _c(
+                      "li",
+                      {
+                        key: result.id,
+                        staticClass:
+                          "list-group list-group-flush position-relative p-2 text-center pr-5"
+                      },
+                      [
+                        _c("a", { attrs: { href: result.url } }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(result.name) +
+                              "\n                        "
+                          )
+                        ])
+                      ]
+                    )
                   }),
                   0
                 )
@@ -38231,10 +38244,10 @@ var render = function() {
       ? _c("div", [
           _c("p", { staticClass: " text-center mt-5" }, [_vm._v("Loading..")])
         ])
-      : _c("div", [
+      : _c("div", { staticClass: " m-auto", staticStyle: { width: "65%" } }, [
           _c(
             "ul",
-            { staticClass: "list-group list-group-flush w-75 m-auto" },
+            { staticClass: "list-group list-group-flush m-auto" },
             [
               _c("h3", { staticClass: "mt-5" }, [_vm._v("Top Musiques")]),
               _vm._v(" "),

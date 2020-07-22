@@ -28,20 +28,25 @@
             </div>
             <form class="form-inline">
                 <div>
-                <input
-                    class="form-control mr-md-2"
-                    type="search"
-                    placeholder="Rechercher"
-                    aria-label="Search"
-                    v-model="query"
-                />
-                <ul v-if="results.length > 0 && query" class=" float-right">
-                    <li v-for="result in results.slice(0, 10)" :key="result.id">
-                        <a :href="result.url">
-                            {{result.name}}
-                        </a>
-                    </li>
-                </ul>
+                    <input
+                        class="form-control mr-md-2"
+                        type="search"
+                        placeholder="Rechercher"
+                        aria-label="Search"
+                        v-model="query"
+                    />
+
+                    <ul v-if="results.length > 0 && query" class=" position-absolute card p-0 ml-5">
+                        <li
+                            v-for="result in results.slice(0, 5)"
+                            :key="result.id"
+                            class="list-group list-group-flush position-relative p-2 text-center pr-5"
+                        >
+                            <a :href="result.url">
+                                {{ result.name }}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </form>
         </div>
